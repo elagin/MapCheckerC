@@ -1,0 +1,5 @@
+class CFile
+{
+public:
+	CFile();
+};
