@@ -2,9 +2,7 @@
 //
 
 #include "stdafx.h"
-
 #include <stdlib.h>
-
 
 #ifdef WIN32
 #include <Windows.h>
@@ -12,7 +10,6 @@
 #else
 #include <sys/types.h>
 #include <dirent.h>
-
 #endif // WIN32
 
 #include "statistic.h"
@@ -104,7 +101,7 @@ bool findFiles(const string & aPath)
                 }
                 else
                 {
-                    stat.appendNotFound( filename, imgName );
+                    stat.appendNotFound( fileName, imgName );
                     cout << "Not found" << endl;
                 }
             }
@@ -165,8 +162,15 @@ int _tmain(int argc, _TCHAR* argv[])
 int main ( int argc, char *argv[] )
 #endif // WIN32
 {
-    findFiles(argv[1]);
-    stat.printResults();
+    if( argc == 2 )
+    {
+        findFiles(argv[1]);
+        stat.procResults();
+    }
+    else
+    {
+        cout << "Enter folder namr for search" << endl;
+    }
     return 0;
 }
 

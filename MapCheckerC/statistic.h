@@ -9,6 +9,7 @@
 #define	STATISTIC_H
 
 #include <map>
+#include "file.h"
 
 typedef map<string, string> times;
 typedef pair<string,string> timesPair;
@@ -21,10 +22,11 @@ public:
     ~CStatistic();
 
     void appendNotFound(const string & mapName, const string & imgName);
-    void printResults();
+    void procResults();
     
 private:
     times _notfound;
+//    CFile _deleteFile;
 };
 
 #endif	/* STATISTIC_H */
